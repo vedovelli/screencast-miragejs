@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Javascript coffee mug",
+    "price": 3.5
+  },
+  {
+    "id": 2,
+    "title": "Javascript T-shirt",
+    "price": 35
+  },
+  {
+    "id": 3,
+    "title": "Javascript stickersm(10 units)",
+    "price": 5.5
+  }
+]
