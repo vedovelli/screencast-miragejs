@@ -3,7 +3,7 @@
     <h1>Users</h1>
     <div>
       <h3 v-if="error">{{ error }}</h3>
-      <p v-else v-for="user in users" :key="user.id">
+      <p data-testid="user" v-else v-for="user in trimmedList" :key="user.id">
         <strong>{{ user.name }}</strong>
         <br />
         <em>{{ user.email }}</em>
@@ -24,6 +24,11 @@ export default {
       users: [],
       products: [],
     };
+  },
+  computed: {
+    trimmedList() {
+      return this.users.slice(0, 10);
+    },
   },
   mounted() {
     axios

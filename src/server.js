@@ -1,4 +1,4 @@
-import { Server, Model, Factory, Response } from 'miragejs';
+import { Server, Model, Factory } from 'miragejs';
 import faker from 'faker';
 import products from './mocks/products.json';
 
@@ -31,14 +31,12 @@ export function makeServer(environment = 'development') {
 
     seeds(server) {
       server.loadFixtures();
-      server.createList('user', 5);
+      server.createList('user', 15);
     },
 
     routes() {
       this.namespace = 'api';
-      this.get('users', () => {
-        return new Response(500, {}, 'O servidor morreu volte outro dia!');
-      });
+      this.resource('users');
       this.resource('products');
     },
   });
